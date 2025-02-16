@@ -15,7 +15,7 @@ sudo apt install -y apache2 mysql-server php php-cli php-fpm php-mysql php-zip p
 1. Clone the repository:
 ```bash
 cd /var/www/html
-sudo git clone [your-repository-url] maintenance
+sudo git clone https://github.com/MdMuminurRahman/BSCPLC-SMW4-Maintenance.git maintenance
 sudo chown -R www-data:www-data maintenance
 cd maintenance
 ```
