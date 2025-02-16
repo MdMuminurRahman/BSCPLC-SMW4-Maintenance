@@ -1,0 +1,183 @@
+/* Custom animations */
+@keyframes slideInDown {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInScale {
+    from {
+        transform: scale(0.95);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+/* Animation classes */
+.animate-slide-in {
+    animation: slideInDown 0.5s ease-out forwards;
+}
+
+.animate-fade-scale {
+    animation: fadeInScale 0.3s ease-out forwards;
+}
+
+/* Custom gradient backgrounds */
+.gradient-blue-green {
+    background: linear-gradient(135deg, #60a5fa, #34d399);
+}
+
+.gradient-hover {
+    transition: background 0.3s ease;
+}
+
+.gradient-hover:hover {
+    background: linear-gradient(135deg, #3b82f6, #10b981);
+}
+
+/* Loading states */
+.loading-skeleton {
+    background: #f3f4f6;
+    background: linear-gradient(90deg, #f3f4f6 25%, #e5e7eb 50%, #f3f4f6 75%);
+    background-size: 1000px 100%;
+    animation: shimmer 2s infinite linear;
+}
+
+/* Custom scrollbar */
+.custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: #94a3b8 #f1f5f9;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #94a3b8;
+    border-radius: 3px;
+}
+
+/* Table styles */
+.table-hover tr:hover {
+    background: linear-gradient(90deg, rgba(59, 130, 246, 0.05), rgba(16, 185, 129, 0.05));
+}
+
+/* Form focus effects */
+.input-focus-effect {
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input-focus-effect:focus {
+    border-color: #60a5fa;
+    box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.2);
+}
+
+/* Card hover effects */
+.card-hover {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Button effects */
+.button-gradient {
+    background: linear-gradient(135deg, #60a5fa, #34d399);
+    transition: all 0.3s ease;
+}
+
+.button-gradient:hover {
+    background: linear-gradient(135deg, #3b82f6, #10b981);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.button-gradient:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Tooltip styles */
+.tooltip {
+    position: relative;
+}
+
+.tooltip:before {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 4px 8px;
+    background: #1f2937;
+    color: white;
+    font-size: 12px;
+    border-radius: 4px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s ease;
+}
+
+.tooltip:hover:before {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(-4px);
+}
+
+/* Mobile responsiveness helpers */
+@media (max-width: 640px) {
+    .mobile-full-width {
+        width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    .mobile-stack {
+        flex-direction: column !important;
+    }
+
+    .mobile-hide {
+        display: none !important;
+    }
+}
+
+/* Print styles */
+@media print {
+    .no-print {
+        display: none !important;
+    }
+
+    .print-break-inside {
+        break-inside: avoid;
+    }
+
+    .print-full-width {
+        width: 100% !important;
+    }
+}
